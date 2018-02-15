@@ -492,7 +492,10 @@ function babelWebV2() {
 		            for(; s.length < 4;)
 			            s = "0" + s;
 		            return s;
-		        }
+		        } else if(h == "from") {
+			    if(d.value[h] == "::/0")
+				return "";
+			}
 		        return d.value[h];
 	        }));
 	    row.text(function(d){return d;});
